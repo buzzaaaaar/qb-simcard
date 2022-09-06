@@ -7,8 +7,8 @@ RegisterNetEvent('simcard:UseSimcard', function(source, args)
         rows = {"New Number"}
     })
     if keyboard then
+        item = tonumber(item)
         local length = string.len(item)
-        tonumber(item)
         if length ~= charLen then
             QBCore.Functions.Notify("Invalid Input", "error" )
         else
