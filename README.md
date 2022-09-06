@@ -1,7 +1,11 @@
 # qb-simcard
 A simple resource that will allow players to change their in-game phone number
 
-Installation
+## Dependencies
+
+nh-keyboard - https://github.com/nerohiro/nh-keyboard
+
+## Installation
 
 Add the line below in to qb-core>server>player.lua (around line 260)
 
@@ -19,3 +23,7 @@ And this to qb-core?shared>items.lua
 `
 
 Run run.sql file
+
+## Credits
+
+Nerohiro for nh-keyboard
