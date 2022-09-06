@@ -24,6 +24,10 @@ And this to qb-core?shared>items.lua
 
 Run run.sql file
 
+## Configuration
+
+Change line 4 in client script according to the number of characters you have in your server for a phone number
+
 ## Credits
 
 Nerohiro for nh-keyboard
