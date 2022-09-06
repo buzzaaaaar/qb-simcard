@@ -31,3 +31,7 @@ Change line 4 in client script according to the number of characters you have in
 ## Credits
 
 Nerohiro for nh-keyboard
+
+## Support
+
+Contact me here for support: https://discord.gg/mEz9MPSXVK
