@@ -11,6 +11,7 @@ function self.Functions.UpdateNumber(newnumber)
   self.Functions.UpdatePlayerData()
 end
 `
+
 And this to qb-core?shared>items.lua
 
 `
