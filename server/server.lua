@@ -8,7 +8,7 @@ end)
 
 RegisterNetEvent('checkNumber', function(item)
     local src = source
-	local Player = QBCore.Functions.GetPlayer(src)
+    local Player = QBCore.Functions.GetPlayer(src)
     local PhoneNumber = item
     local query = '%' .. PhoneNumber .. '%'
     local result = MySQL.prepare.await('SELECT COUNT(*) as count FROM players WHERE charinfo LIKE ?', { query })
@@ -17,10 +17,7 @@ RegisterNetEvent('checkNumber', function(item)
     if result2 == 0 and result == 0 then
         local newnumber = tonumber(item)
         local oldnumber = tonumber(number)
-        print(oldnumber .. ' to ' .. newnumber)
-        print(newnumber)
         MySQL.insert('INSERT INTO ph_num (number) VALUES (?)', {newnumber})
-        print(number)
         MySQL.query('DELETE FROM ph_num WHERE number= ?;', {number})
         Player.Functions.UpdateNumber(newnumber, 0)
         TriggerClientEvent('notify1', src)
