@@ -16,7 +16,7 @@ function self.Functions.UpdateNumber(newnumber)
 end
 `
 
-And this to qb-core?shared>items.lua
+And this to qb-core>shared>items.lua
 
 `
 ['simcard'] 				 		 = {['name'] = 'simcard', 			    		['label'] = 'Sim Card', 					['weight'] = 1, 	['type'] = 'item', 		['image'] = 'simcard.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'Its a new sim.. That means a new number?'},
