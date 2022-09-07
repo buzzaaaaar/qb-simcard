@@ -1,5 +1,5 @@
 # qb-simcard
-A simple resource that will allow players to change their in-game phone number
+A simple fivem resource for qbcore that will allow players to change their in-game phone number
 
 ## Dependencies
 
