@@ -26,7 +26,7 @@ Run run.sql file
 
 ## Configuration
 
-Change line 4 in client script according to the number of characters you have in your server for a phone number
+Check config.lua
 
 ## Credits
 
