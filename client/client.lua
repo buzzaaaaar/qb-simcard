@@ -30,12 +30,20 @@ RegisterNetEvent('simcard:UseSimcard', function(source, args)
             QBCore.Functions.Notify( "Cancelled", "error")
         end) 
     else
-        local keyboard, item = exports["nh-keyboard"]:Keyboard({
+        local dialog = exports["qb-input"]:ShowInput({
             header = "Phone number change app", 
-            rows = {"New Number"}
+            submitText  = "New Number",
+            inputs = {
+                {
+                text = "Change your phone number",
+                name = "item",
+                type = "number",
+                isRequired = true,
+                }
+            },
         })
-        if keyboard then
-            item = tonumber(item)
+        if dialog ~= nil then
+            item = tonumber(dialog.item)
             local length = string.len(item)
             if length ~= Config.charLen then
                 QBCore.Functions.Notify("Invalid Input", "error" )
