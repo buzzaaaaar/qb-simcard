@@ -10,6 +10,14 @@ nh-keyboard - https://github.com/nerohiro/nh-keyboard
 
 ## Installation
 
+Add this to qb-core>server>player.lua (around line 260)
+
+`
+function self.Functions.UpdateNumber(newnumber)
+        self.PlayerData.charinfo.phone = newnumber
+        self.Functions.UpdatePlayerData()
+    end
+`
 
 Add this to qb-core>shared>items.lua
 
