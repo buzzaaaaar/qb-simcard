@@ -6,7 +6,7 @@ Fixed number sending as a integer to string
 
 ## Dependencies
 
-nh-keyboard - https://github.com/nerohiro/nh-keyboard
+qb-input - https://github.com/qbcore-framework/qb-input
 
 ## Installation
 
@@ -33,10 +33,6 @@ Run run.sql file
 ## Configuration
 
 Check config.lua
-
-## Credits
-
-Nerohiro for nh-keyboard
 
 ## Support
 
