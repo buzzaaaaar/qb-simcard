@@ -43,7 +43,7 @@ RegisterNetEvent('simcard:UseSimcard', function(source, args)
             },
         })
         if dialog ~= nil then
-            item = tonumber(dialog.item)
+            item = dialog.item
             local length = string.len(item)
             if length ~= Config.charLen then
                 QBCore.Functions.Notify("Invalid Input", "error" )
