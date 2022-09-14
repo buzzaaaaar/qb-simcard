@@ -27,9 +27,6 @@ Add this to qb-core>shared>items.lua
 
 Add simcard.png to qb-inventory>html>images
 
-
-Run run.sql file
-
 ## Configuration
 
 Check config.lua
