@@ -12,15 +12,11 @@ RegisterNetEvent('checkNumber', function(item)
     local PhoneNumber = item
     local query = '%' .. PhoneNumber .. '%'
     local result = MySQL.prepare.await('SELECT COUNT(*) as count FROM players WHERE charinfo LIKE ?', { query })
-    local result2 = MySQL.prepare.await('SELECT COUNT(*) as count FROM ph_num WHERE number LIKE ?', { query })
-    local number = Player.PlayerData.charinfo.phone
-    if result2 == 0 and result == 0 then
-        local newnumber = tonumber(item)
-        local oldnumber = tonumber(number)
-        MySQL.insert('INSERT INTO ph_num (number) VALUES (?)', {newnumber})
-        MySQL.query('DELETE FROM ph_num WHERE number= ?;', {number})
-        local newnumstr = tostring(newnumber)
+    local oldnumber = Player.PlayerData.charinfo.phone
+    if result == 0 then
+        local newnumstr = tostring(PhoneNumber)
         Player.Functions.UpdateNumber(newnumstr, 0)
+        Player.Functions.Save()
         TriggerClientEvent('notify1', src)
         Player.Functions.RemoveItem('simcard', 1)
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["simcard"], "remove")
@@ -36,14 +32,11 @@ RegisterNetEvent('checkNumberrand', function()
 	local Player = QBCore.Functions.GetPlayer(src)
     local PhoneNumber = math.random(math1 , math2)
     local result = MySQL.prepare.await('SELECT COUNT(*) as count FROM players WHERE charinfo LIKE ?', { PhoneNumber })
-    local result2 = MySQL.prepare.await('SELECT COUNT(*) as count FROM ph_num WHERE number LIKE ?', { PhoneNumber })
     local oldnumber = Player.PlayerData.charinfo.phone
-    if result2 == 0 and result == 0 then
-        local newnumber = tonumber(PhoneNumber)
-        MySQL.insert('INSERT INTO ph_num (number) VALUES (?)', {newnumber})
-        MySQL.query('DELETE FROM ph_num WHERE number= ?;', {oldnumber})
-        local newnumstr = tostring(newnumber)
+    if result == 0 then
+        local newnumstr = tostring(PhoneNumber)
         Player.Functions.UpdateNumber(newnumstr, 0)
+        Player.Functions.Save()
         TriggerClientEvent('notify1', src)
         Player.Functions.RemoveItem('simcard', 1)
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["simcard"], "remove")
